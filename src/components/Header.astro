@@ -1,0 +1,20 @@
+---
+import AiotronicHorizontalIcon from '../assets/aiotronic-horizontal.svg'
+import FacebookIcon from '../assets/facebook-icon.svg'
+import LinkedinIcon from '../assets/linkedin-icon.svg'
+---
+
+<header class="max-w-[70%] mx-auto w-full absolute left-1/2 -translate-x-1/2 py-2">
+  <nav class="flex justify-between items-center max-lg:hidden">
+    <img src={AiotronicHorizontalIcon.src} alt={AiotronicHorizontalIcon.name} width="200px" />
+    <ul class="flex font-medium gap-8">
+      <a class="cursor-pointer" href="#">Inicio</a>
+      <a class="cursor-pointer" href="#who-we-are">Conocenos</a>
+      <a class="cursor-pointer" href="#contact">Contacto</a>
+    </ul>
+    <div class="flex gap-5">
+      <img src={FacebookIcon.src} alt={FacebookIcon.name} width="38" height="37" class="cursor-pointer" />
+      <img src={LinkedinIcon.src} alt={LinkedinIcon.name} width="35" height="35" class="cursor-pointer" />
+    </div>
+  </nav>
+</header>

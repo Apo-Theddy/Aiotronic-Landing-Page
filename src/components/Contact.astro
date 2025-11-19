@@ -1,0 +1,75 @@
+---
+import Input from './Input.astro'
+import UbicationIcon from '../assets/ubication-icon.svg'
+import PhoneIcon from '../assets/phone-icon.svg'
+import MaileIcon from '../assets/mail-icon.svg'
+---
+
+<section class="min-h-screen bg-black flex flex-col items-center justify-center" id="contact">
+  <div class="md:max-w-[70%] md:mx-auto max-md:p-3 w-full">
+    <h4 class="text-xl font-bold">Contacta a nuestro Equipo</h4>
+    <p class="text-lg mb-4">Estamos aquí para escucharte y conversar acerca de tu proyecto, construyamos algo impresionante juntos</p>
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="border border-[#4F4F4F] px-6 py-4 rounded-2xl">
+        <form action="" class="grid md:grid-cols-2 gap-4">
+          <div class="max-lg:col-span-2 flex flex-col gap-1">
+            <label for="name">Nombre</label>
+            <Input placeholder="Nombre" />
+          </div>
+          <div class="max-lg:col-span-2 flex flex-col gap-1">
+            <label for="name">Apellidos</label>
+            <Input placeholder="Apellidos" />
+          </div>
+          <div class="col-span-2 flex flex-col gap-1">
+            <p>Email</p>
+            <Input placeholder="Email" />
+          </div>
+          <div class="col-span-2 flex flex-col gap-1">
+            <p>Telefono</p>
+            <Input placeholder="Telefono" />
+          </div>
+          <div class="col-span-2 flex flex-col gap-1">
+            <p>Asunto</p>
+            <Input placeholder="Asunto.." />
+          </div>
+          <div class="col-span-2 flex flex-col gap-1">
+            <p>Mensaje</p>
+            <textarea name="message" id="message" rows="5" class="bg-[#222222] outline-none p-2 w-full rounded-md resize-none" placeholder="Escribe tu mensaje..."></textarea>
+          </div>
+          <div class="col-span-2 flex justify-center">
+            <button class="rounded-xl bg-[#13315C] min-w-42 min-h-11 font-medium">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <div class="flex flex-col gap-10">
+        <div class="flex flex-col gap-5 rounded-xl border border-[#4F4F4F] px-10 py-6">
+          <div class="flex gap-4">
+            <img src={UbicationIcon.src} alt="Ubication icon" width="20" height="29" />
+            <p>Jr. San Jorge 302, Comas, Lima, Perú</p>
+          </div>
+          <div class="flex gap-4">
+            <img src={PhoneIcon.src} alt="Ubication icon" width="28" height="29" />
+            <p>+51 947 771 252</p>
+          </div>
+          <div class="flex gap-3">
+            <img src={MaileIcon.src} alt="Ubication icon" width="32" height="24" />
+            <p>ventas@aiotronic.com.pe</p>
+          </div>
+        </div>
+        <div>
+          <div class="border border-[#536DFF] rounded-xl">
+            <iframe
+              class="w-full h-[55vh] grayscale rounded-xl"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d222498.14857650475!2d-77.0560435753165!3d-12.024438066304075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d0591e867473%3A0x9feffc7f2e5f6158!2sSan%20Jorge%20300%2C%20Comas%2015313!5e0!3m2!1ses-419!2spe!4v1707941767727!5m2!1ses-419!2spe"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

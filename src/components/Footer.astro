@@ -1,0 +1,14 @@
+---
+import AiotronicMiniIcon from '../assets/aiotronic-mini.svg'
+import AiotronicLogo from '../assets/aiotronic-logo.svg'
+
+const currentTime = new Date()
+const currentYear = currentTime.getFullYear()
+---
+
+<footer class="bg-[#0B2545] py-5">
+  <div class="md:w-[70%] mx-auto flex max-md:flex-col items-center gap-2 justify-center">
+    <img src={AiotronicMiniIcon.src} alt={AiotronicLogo.name} />
+    <p class="text-center">© {currentYear} AIOTRONIC. Todos los derechos reservados.</p>
+  </div>
+</footer>

@@ -1,4 +1,14 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 
 @font-face {
     font-family: "Inter";
