@@ -29,13 +29,12 @@ const articles = [
     <div class="flex grid-cols-1 max-md:grid-cols-3">
       <div class="col-span-3 grid grid-cols-12 border border-[#536DFF] rounded-lg bg-[#050F1E]">
         <img src={AiotronicLogo.src} alt="Aiotronic Logo" class="col-span-12 md:col-span-6 h-[30em] w-full" />
-        <div class="flex flex-col justify-center items-center gap-5 col-span-12 md:col-span-6">
+        <div class="flex flex-col justify-center items-center gap-5 col-span-12 md:col-span-6 p-2">
           <h3 class="text-4xl font-medium text-center">¿Quienes Somos?</h3>
           <p class="md:max-w-1/2 text-center text-xl">Nuestra empresa se destaca por su enfoque en la automatización de procesos, la constante innovación y el desarrollo tecnológico.</p>
         </div>
       </div>
     </div>
-
     <div class="grid grid-cols-1 md:grid-cols-3 justify-between mt-10 gap-10">
       {articles.map((a) => <Card label={a.label} description={a.description} img={a.img} />)}
     </div>

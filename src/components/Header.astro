@@ -2,19 +2,61 @@
 import AiotronicHorizontalIcon from '../assets/aiotronic-horizontal.svg'
 import FacebookIcon from '../assets/facebook-icon.svg'
 import LinkedinIcon from '../assets/linkedin-icon.svg'
+import MenuIcon from '../assets/menu.svg'
 ---
 
-<header class="max-w-[70%] mx-auto w-full absolute left-1/2 -translate-x-1/2 py-2">
-  <nav class="flex justify-between items-center max-lg:hidden">
-    <img src={AiotronicHorizontalIcon.src} alt={AiotronicHorizontalIcon.name} width="200px" />
-    <ul class="flex font-medium gap-8">
-      <a class="cursor-pointer" href="#">Inicio</a>
-      <a class="cursor-pointer" href="#who-we-are">Conocenos</a>
-      <a class="cursor-pointer" href="#contact">Contacto</a>
-    </ul>
-    <div class="flex gap-5">
-      <img src={FacebookIcon.src} alt={FacebookIcon.name} width="38" height="37" class="cursor-pointer" />
-      <img src={LinkedinIcon.src} alt={LinkedinIcon.name} width="35" height="35" class="cursor-pointer" />
+<header class="lg:max-w-[70%] mx-auto w-full lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+  <nav>
+    <div class="w-full lg:hidden">
+      <div class="flex absolute w-full justify-between">
+        <img src={AiotronicHorizontalIcon.src} alt={AiotronicHorizontalIcon.name} width="150px" id="logo" />
+        <img src={MenuIcon.src} alt={MenuIcon.name} class="w-8 peer z-50 cursor-pointer" id="menuToggle" />
+      </div>
+    </div>
+
+    <div id="floatNavigation" class="fixed top-0 z-40 lg:hidden bg-white max-lg:min-h-1/2 w-full -translate-y-full left-0 transform transition-transform items-center rounded-bl-2xl rounded-br-2xl">
+      <div class="flex flex-col text-black items-center">
+        <ul class="flex flex-col items-center w-full">
+          <li class="my-8 text-2xl font-medium cursor-pointer"><a href="#">Inicio</a></li>
+          <li class="my-8 text-2xl font-medium cursor-pointer"><a href="#who-we-are">Conocenos</a></li>
+          <li class="my-8 text-2xl font-medium cursor-pointer"><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="justify-between items-center px-4 lg:px-0 hidden lg:flex">
+      <img src={AiotronicHorizontalIcon.src} alt={AiotronicHorizontalIcon.name} width="200px" />
+      <ul class="flex font-medium gap-8">
+        <a class="cursor-pointer" href="#">Inicio</a>
+        <a class="cursor-pointer" href="#who-we-are">Conocenos</a>
+        <a class="cursor-pointer" href="#contact">Contacto</a>
+      </ul>
+      <div class="flex gap-5">
+        <img src={FacebookIcon.src} alt={FacebookIcon.name} width="38" height="37" class="cursor-pointer" />
+        <img src={LinkedinIcon.src} alt={LinkedinIcon.name} width="35" height="35" class="cursor-pointer" />
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+  import MenuIcon from '../assets/menu.svg'
+  import CloseIcon from '../assets/close.svg'
+  const menuToggle = document.getElementById('menuToggle') as HTMLImageElement
+  const floatNavigation = document.getElementById('floatNavigation')
+  const logo = document.getElementById('logo') as HTMLImageElement
+
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = floatNavigation?.classList.toggle('translate-y-0')
+    menuToggle.classList.toggle('invert-100')
+    logo?.classList.toggle('invert-100')
+
+    if (isOpen) {
+      menuToggle.src = CloseIcon.src
+      menuToggle.classList.add('fixed', 'top-1', 'right-1')
+    } else {
+      menuToggle.src = MenuIcon.src
+      menuToggle.classList.remove('fixed', 'top-1', 'right-1')
+    }
+  })
+</script>
